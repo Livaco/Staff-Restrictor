@@ -1,0 +1,11 @@
+"AddonInfo"
+{
+	"name"				"StaffRestrictor"
+	"version"			"1.0"
+	"up_date"			"22/12/2018"
+	"author_name"		"Livaco"
+	"author_email"		"livacobussness@outlook.com"
+	"author_url"		"livaco.tk"
+	"info"				"Blocks your staff from using certain ULX commands outside of off duty jobs."
+	"override"			"0"
+}

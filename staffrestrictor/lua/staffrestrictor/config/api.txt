@@ -1,0 +1,18 @@
+This is the entire API for the addon. It's small but can be used if you are looking to hook into the addon.
+
+StaffRestrictor:Print(message String)
+Shared. Prints a message in the console of the realm it's called. Returns nothing.
+
+StaffRestrictor:Message(message String)
+Client. Prints a message in the chat box of the player. Returns nothing.
+
+StaffRestrictor:SvMessage(ply Entity, message String)
+Server. Same as StaffRestrictor:Message, but called Serverside and requires the player entity to send it to. Returns nothing.
+
+StaffRestrictor:CheckBlockedCommand(command String)
+Server. Takes the command and checks if it's on the Blocked Commands table (StaffRestrictor.Config.BlockedCommands). Returns a boolean.
+
+StaffRestrictor:CheckBlockedJob(ply Entity)
+Server. Takes the player and checks if he is in a job that cannot use blocked commands. Returns a boolean.
+
+If you have any questions about these, make a ticket on livaco.tk and i'l help.
