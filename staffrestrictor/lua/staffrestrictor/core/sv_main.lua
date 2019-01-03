@@ -1,10 +1,10 @@
 util.AddNetworkString("staffrestrictor_message")
 
 local RanCheck = false
-hook.Add("PlayerConnect", "AddonBase_checkversion", function()
+hook.Add("PlayerConnect", "staffrestrictor_checkversion", function()
   if(RanCheck == true) then return end
   StaffRestrictor:Print("Running version check!")
-  http.Post("https://livacoweb.000webhostapp.com/libaries/versions/staffrestrictor.php", {RunningVar = "1.0"}, function(result)
+  http.Post("https://livacoweb.000webhostapp.com/libaries/versions/staffrestrictor.php", {RunningVar = "1.1"}, function(result)
     StaffRestrictor:Print(result)
   end, function(fail)
     StaffRestrictor:Print(fail)
@@ -23,6 +23,8 @@ function StaffRestrictor:CheckBlockedCommand(cmd)
 end
 
 function StaffRestrictor:CheckBlockedJob(ply)
+  if(!ply:IsPlayer()) then return end
+  if(!IsValid(ply)) then return end // Rules out any possibility of it being the console.
   if(StaffRestrictor.Config.AllowedJobs[ply:Team()] == true) then
     return false
   else
